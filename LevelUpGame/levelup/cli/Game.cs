@@ -78,6 +78,9 @@ class Game
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+
+
         }
     }
 
@@ -168,6 +171,7 @@ class Game
     private static void updateStatus(GameController.GameStatus status)
     {
         gameHistory.Add(status);
+        Console.WriteLine(string.Format("Your new position is {0}, {1}. Move count: {2}",0,0,0));
     }
 
 
