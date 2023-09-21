@@ -1,14 +1,27 @@
-public class Point {
+using System.Runtime.InteropServices;
 
-public int X;
-public int Y;
+public class Point
+{
 
-public Point(){}
+    public int X;
+    public int Y;
 
-public Point(int X, int Y){
+    public Point() { }
 
-    this.X = X;
-    this.Y = Y;
-}
+    public Point(int X, int Y)
+    {
+
+        this.X = X;
+        this.Y = Y;
+    }
+
+
+    static Point SumPoints(Point startingPoint, Point endingPoint)
+    {
+
+        return new Point(startingPoint.X + endingPoint.X, startingPoint.Y + endingPoint.Y);
+
+    }
+
 
 }
