@@ -3,6 +3,10 @@ using static levelup.GameController;
 
 public class Position
 {
+Point point;
+public Position(Point p){
+    point = p;
+}
 
 
     static Point getPositionFromDirection(DIRECTION direction, int steps = 1)
