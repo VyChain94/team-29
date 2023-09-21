@@ -1,29 +1,34 @@
 using NUnit.Framework;
 using levelup;
+//using levelup.GameController;
 
-public class CharacterTest {
+public class CharacterTest
+{
     Character chr;
     GameMap map;
     Point startPos;
-    DIRECTION direction;
+    levelup.GameController.DIRECTION direction;
 
     [SetUp]
-    public void SetUp(){
+    public void SetUp()
+    {
         chr = new Character();
         map = new GameMap();
-        startPos = new Point(0,0);
-        direction = new DIRECTION();
+        startPos = new Point(0, 0);
+        //direction = new DIRECTION();
     }
 
     [Test]
-    public void TestDefaultName() {        
+    public void TestDefaultName()
+    {
         string name = chr.getName();
         string defaultname = "Character";
-        Assert.AreEqual(defaultname,name);
+        Assert.AreEqual(defaultname, name);
     }
 
     [Test]
-    public void TestCustomName() {
+    public void TestCustomName()
+    {
         chr = new Character("Bob");
         string name = chr.getName();
         string customName = "Bob";
@@ -31,7 +36,8 @@ public class CharacterTest {
     }
 
     [Test]
-    public void TestEnterMap() {
+    public void TestEnterMap()
+    {
         chr.enterMap(map);
         // Test map existence 
         // test starting point
@@ -47,6 +53,6 @@ public class CharacterTest {
     [Test]
     public void TestMove()
     {
-        
-    } 
+
+    }
 }
