@@ -78,9 +78,6 @@ class Game
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-
-
-
         }
     }
 
@@ -109,12 +106,10 @@ class Game
 
     static void CreateCharacter()
     {
-        var characterName = Prompt.Input<string>("What is your astronaut's name?");
-        // ASCII Art
-        Console.WriteLine("   O\n  /|\\\n  / \\\n");
+        var characterName = Prompt.Input<string>("What is your character's name?");
         gameController.CreateCharacter(characterName);
         var gameStatusCharacterName = gameController.GetStatus().characterName;
-        Console.WriteLine($"Your astronaut, {gameStatusCharacterName}, is created!");
+        Console.WriteLine($"Your character, {gameStatusCharacterName}, is created!");
     }
     static void StartGame()
     {
@@ -122,8 +117,7 @@ class Game
         gameController.StartGame();
         // TODO: Update this prompt. Also, do you want to get the game status and tell
         // the character where their character is?
-        // Console.WriteLine("Welcome to Forests and Monsters! You have entered a mysterious place.");
-        Console.WriteLine("You've just blasted off into the endless expanse of space, embarking on an extraordinary journey beyond our world.");
+        Console.WriteLine("Welcome to Forests and Monsters! You have entered a mysterious place.");
     }
     static void MoveNorth()
     {
@@ -153,7 +147,7 @@ class Game
         if (answer == true)
         {
             //TODO: PRINT FINAL SUMMARY
-            Console.WriteLine("You have landed back on Earth.");
+            Console.WriteLine("You exit the mysterious world.");
             PrintSummary();
             Environment.Exit(0);
         }
@@ -161,7 +155,7 @@ class Game
 
     static void PrintSummary()
     {
-        Console.WriteLine("Exiting the spaceship!");
+        Console.WriteLine("Exiting the mysterious land!");
         foreach (GameController.GameStatus status in gameHistory)
         {
             // TODO: Override toString on game status to print pretty
@@ -174,7 +168,6 @@ class Game
     private static void updateStatus(GameController.GameStatus status)
     {
         gameHistory.Add(status);
-        Console.WriteLine(string.Format("Your new position is {0}, {1}. Move count: {2}",0,0,0));
     }
 
 
