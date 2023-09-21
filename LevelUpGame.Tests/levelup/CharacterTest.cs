@@ -5,12 +5,14 @@ public class CharacterTest {
     Character chr;
     GameMap map;
     Point startPos;
+    DIRECTION direction;
 
     [SetUp]
     public void SetUp(){
         chr = new Character();
         map = new GameMap();
         startPos = new Point(0,0);
+        direction = new DIRECTION();
     }
 
     [Test]
@@ -41,4 +43,10 @@ public class CharacterTest {
         Assert.AreEqual(startPos.X, chrX);
         Assert.AreEqual(startPos.Y, chrY);
     }
+
+    [Test]
+    public void TestMove()
+    {
+        
+    } 
 }

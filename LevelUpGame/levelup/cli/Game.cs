@@ -26,6 +26,7 @@ class Game
     }
     static void Main(string[] args)
     {
+              
         printWelcomeMessage();
 
         while (!isGameStarted)
